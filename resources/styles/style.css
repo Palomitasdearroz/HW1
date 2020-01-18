@@ -1,0 +1,55 @@
+body {
+    font-family: 'Montserrat';
+}
+
+h1, h2, h3 {
+    font-family: 'Paytone One', sans-serif;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    height: 50px;
+}
+
+.container{
+    display: flex;
+    text-align: center;
+}
+
+.item-container{
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.header.container > section > h1 {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+.item-container > p {
+    color: blue;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.header-logo {
+    height: 50px;
+}
+
+#logo {
+    width: 200px;
+    margin: 0px;
+}
+
+#currency{
+    color: green;
+}
+
+#embedded{
+    height: 100%;
+    width: 100%;
+    border: 0px;
+}
