@@ -1,13 +1,37 @@
 body {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3 {
     font-family: 'Paytone One', sans-serif;
 }
 
+h4 {
+    text-align: center;
+    margin: 0px;
+}
+
 img {
     width: 100%;
+}
+
+table {
+    border: groove dimgray 0.5px;
+    width: 90%;
+    margin: auto;
+}
+
+th, td {
+    border: groove dimgray 0.5px;
+    text-align: center;
+}
+
+td:first-child{
+    background-color: silver;
+}
+
+tr.firstrow > th:first-child{
+    background-color: silver;
 }
 
 .header {
@@ -43,9 +67,11 @@ img {
 }
 
 .embedded{
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
     border: 0px;
+    margin: 0px;
 }
 
 #logo {

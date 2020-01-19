@@ -17,7 +17,7 @@
             <h1>Global Dashboard</h1>
         </section>
     </header>
-    <section class="numbers container">
+    <section class="container">
         <section class="item-container center">
             <h2>Dingus</h2>
             <p>0</p>
@@ -28,31 +28,82 @@
         </section>
         <section class="item-container center">
             <h2>Sales</h2>
-            <p><span id="currency">&#36;</span>0.00</p>
+            <p>
+                <span id="currency">&#36;</span>0.00
+            </p>
         </section>
     </section>
     <hr />
-    <section class="numbers container">
-        <section class="item-container center">
+    <section class="container">
+        <section class="item-container
+        ">
             <h3>Total Sales Breakdown</h3>
             <figure>
                 <img src="./resources/images/pie.png" alt="Pie Chart of Sales">
             </figure>
         </section>
-        <section class="item-container center">
+        <section class="item-container">
             <h3>Sales Per Day</h3>
             <figure>
                 <img src="./resources/images/bar.png" alt="Sales per Day Graph">
             </figure>
         </section>
-        <section class="item-container center">
-            <h3>Total Sales Breakdown</h3>
-            <div class="embedded">
+        <section class="item-container">
+            <figure class="embedded">
                 <iframe class="embedded" src="https://app.zingsoft.com/demos/view/DK4RG3XN"></iframe>
-            </div>
-            <a href="https://app.zingsoft.com/demos/view/DK4RG3XN">Source</a>
+                <figcaption>
+                    <a href="https://app.zingsoft.com/demos/view/DK4RG3XN">Source</a>
+                </figcaption>
+            </figure>
         </section>
     </section>
     <hr />
+    <section >
+        <h4>Order History</h4>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr class="firstrow">
+                        <th rowspan="2">ID#</th>
+                        <th rowspan="2">Date</th>
+                        <th colspan="2">Quantity</th>
+                        <th rowspan="2">Total</th>
+                      </tr>
+                      <tr>
+                          <th>Dingus</th>
+                          <th>Widget</th>
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1221</td>
+                        <td>12/12/19</td>
+                        <td>4</td>
+                        <td>10</td>
+                        <td><span>&#36;</span>12.33</td>
+                      </tr>
+                      <tr>
+                          <td>1222</td>
+                          <td>12/21/19</td>
+                          <td>1</td>
+                          <td>2</td>
+                          <td><span>&#36;</span>27.34</td>
+                        </tr>
+                        <tr>
+                          <td>1223</td>
+                          <td>1/5/20</td>
+                          <td>14</td>
+                          <td>19</td>
+                          <td><span>&#36;</span>345.33</td>
+                        </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"><span>&copy;</span> D&W Worldwide</td>
+                    </tr>
+                </tfoot>
+              </table>
+        </div>
+    </section >
 </body>
 </html>
