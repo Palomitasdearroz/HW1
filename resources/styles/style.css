@@ -26,11 +26,7 @@ th, td {
     text-align: center;
 }
 
-td:first-child{
-    background-color: silver;
-}
-
-tr.firstrow > th:first-child{
+.first{
     background-color: silver;
 }
 
