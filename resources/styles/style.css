@@ -21,6 +21,10 @@ table {
     margin: auto;
 }
 
+details{
+    margin-top: 40px;
+}
+
 th, td {
     border: groove dimgray 0.5px;
     text-align: center;
@@ -34,7 +38,7 @@ th, td {
     height: 50px;
 }
 
-.container{
+.vertical-container{
     display: flex;
     text-align: center;
 }
@@ -46,7 +50,7 @@ th, td {
     flex-direction: column;
 }
 
-.header.container > section > h1 {
+.header.vertical-container > section > h1 {
     margin: 0px;
     padding-left: 20px;
 }
