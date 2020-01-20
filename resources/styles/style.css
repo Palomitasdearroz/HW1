@@ -6,11 +6,6 @@ h1, h2, h3 {
     font-family: 'Paytone One', sans-serif;
 }
 
-h4 {
-    text-align: center;
-    margin: 0px;
-}
-
 img {
     width: 100%;
 }
@@ -38,15 +33,18 @@ th, td {
     height: 50px;
 }
 
-.vertical-container{
+.horizontal-container{
+    flex-grow: 1;
+    flex-basis: 0;
     display: flex;
     text-align: center;
 }
 
-.item-container{
+.vertical-container{
     flex-grow: 1;
     flex-basis: 0;
     display: flex;
+    text-align: center;
     flex-direction: column;
 }
 
@@ -55,7 +53,7 @@ th, td {
     padding-left: 20px;
 }
 
-.item-container > p {
+.vertical-container > p {
     color: blue;
     font-weight: bold;
     font-size: 25px;
