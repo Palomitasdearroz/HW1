@@ -29,8 +29,16 @@ th, td {
     text-align: center;
 }
 
+summary {
+    font-weight: bold;
+}
+
 .first{
     background-color: silver;
+}
+
+.short{
+    width: 80px;
 }
 
 .header {
