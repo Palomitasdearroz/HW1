@@ -20,6 +20,10 @@ details{
     margin-top: 40px;
 }
 
+fieldset{
+    border: none;
+}
+
 th, td {
     border: groove dimgray 0.5px;
     text-align: center;

@@ -117,7 +117,41 @@
             <hr/>
             <form>
                 <fieldset>
-
+                    <label for="number_dingus">Dingus </label><input id="number_dingus" type="number" value="0">
+                    <label for="price_dingus"> @ </label><input id="price_dingus" type="number" value="14.25">
+                    <label for="total_dingus"> = $ </label><input id="total_dingus" type="number" value="0.00">
+                </fieldset>
+                <fieldset>
+                    <label for="number_widget">Widget </label><input id="number_widget" type="number" value="0">
+                    <label for="price_widget"> @ </label><input id="price_widget" type="number" value="9.99">
+                    <label for="total_widget"> = $ </label><input id="total_widget" type="number" value="0.00">
+                </fieldset>
+                <fieldset>
+                    <label for="Total">Total $ </label><input id="Total" type="number" value="0.00">
+                </fieldset>
+                <fieldset>
+                    <label for="Shipping">Shipping </label>
+                    <input list="Shipping-List" id="Shipping">
+                    <datalist id="Shipping-List">
+                        <option value="Regular">
+                        <option value="Express">
+                      </datalist>
+                </fieldset>
+                <fieldset>
+                    <label for="Payment">Payment</label>
+                    <select id="Payment">
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                        <option value="PayPal">PayPal</option>
+                      </select>
+                </fieldset>
+                <fieldset>
+                    <label for="Comment">Comment</label>
+                    <textarea id="Comment"></textarea>
+                </fieldset>
+                <fieldset>
+                    <button type="reset">Cancel</button>
+                    <button type="submit" disabled>Order</button>
                 </fieldset>
             </form>
         </details>
