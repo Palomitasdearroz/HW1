@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./resources/styles/PureCSS-1.0.1/pure-min.css">
     <link rel="stylesheet" href="./resources/styles/PureCSS-1.0.1/buttons-min.css">
     <link rel="stylesheet" href="./resources/styles/PureCSS-Personalized.css">
+    <script src="./resources/scripts/hw2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
     <title>Dingus & Widget - Global Dashboard</title>
 </head>
@@ -66,13 +67,6 @@
                             <td>10</td>
                             <td><span>&#36;</span>12.33</td>
                         </tr>
-                        <tr>
-                            <td>1222</td>
-                            <td>12/21/19</td>
-                            <td>1</td>
-                            <td>2</td>
-                            <td><span>&#36;</span>27.34</td>
-                        </tr>
                     </tbody>
                     <tfoot>
                         <tr>
@@ -87,12 +81,12 @@
             <hr/>
             <form class="pure-form">
                 <fieldset>
-                    <label for="number_dingus">Dingus </label><input id="number_dingus" class="short" type="number" value="0">
+                    <label for="number_dingus">Dingus </label><input id="number_dingus" class="short" type="number" min="0" max="999" step="1" value="0" oninput="calculate();">
                     <label for="price_dingus"> @ </label><input id="price_dingus" type="number" value="14.25" disabled>
                     <label for="total_dingus"> = $ </label><input id="total_dingus" type="number" value="0.00" disabled>
                 </fieldset>
                 <fieldset>
-                    <label for="number_widget">Widget </label><input id="number_widget" class="short" type="number" value="0">
+                    <label for="number_widget">Widget </label><input id="number_widget" class="short" type="number" min="0" max="999" step="1" value="0" oninput="calculate();">
                     <label for="price_widget"> @ </label><input id="price_widget" type="number" value="9.99" disabled>
                     <label for="total_widget"> = $ </label><input id="total_widget" type="number" value="0.00" disabled>
                 </fieldset>
@@ -100,8 +94,8 @@
                     <label for="Total">Total $ </label><input id="Total" type="number" value="0.00" disabled>
                 </fieldset>
                 <fieldset>
-                    <button type="reset" class="pure-button button-error">Cancel</button>
-                    <button type="submit" class="pure-button button-success" disabled>Order</button>
+                    <button id="calcel" type="reset" class="pure-button button-error">Cancel</button>
+                    <button id="submit" type="submit" class="pure-button button-success" disabled>Order</button>
                 </fieldset>
             </form>
         </details>
