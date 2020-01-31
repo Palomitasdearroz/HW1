@@ -117,7 +117,7 @@ function firstLoad(){
 		appendData(element);
 	});
 
-	//retrieveData();
+	retrieveData();
 
 	if(orderHistory != null){
 		orderHistory.forEach(element => {
@@ -127,11 +127,11 @@ function firstLoad(){
 }
 
 function storeData(){
-	localStorage.setItem('orderHistory', orderHistory);
+	localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
 }
 
 function retrieveData(){
-	let storedData = localStorage.getItem('orderHistory');
+	let storedData =JSON.parse(localStorage.getItem('orderHistory'));
 	if(storedData != null)
 		orderHistory = storedData;
 }
