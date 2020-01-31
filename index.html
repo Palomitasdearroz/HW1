@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat%7CPaytone+One&display=swap" rel="stylesheet" />
     <title>Dingus & Widget - Global Dashboard</title>
 </head>
-<body>
+<body onload="firstLoad()">
     <main>
         <header class="header horizontal-container">
             <figure id="logo">
@@ -59,14 +59,7 @@
                             <th>Widget</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1221</td>
-                            <td>12/12/19</td>
-                            <td>4</td>
-                            <td>10</td>
-                            <td><span>&#36;</span>12.33</td>
-                        </tr>
+                    <tbody id="tableBody">
                     </tbody>
                     <tfoot>
                         <tr>
@@ -94,8 +87,8 @@
                     <label for="Total">Total $ </label><input id="Total" type="number" value="0.00" disabled>
                 </fieldset>
                 <fieldset>
-                    <button id="calcel" type="reset" class="pure-button button-error">Cancel</button>
-                    <button id="submit" type="submit" class="pure-button button-success" disabled>Order</button>
+                    <button id="calcel" type="reset" class="pure-button button-error" onclick="cancel()">Cancel</button>
+                    <button id="submit" type="button" class="pure-button button-success" disabled onclick="submitOrder()">Order</button>
                 </fieldset>
             </form>
         </details>

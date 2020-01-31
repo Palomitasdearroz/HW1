@@ -2,7 +2,6 @@
 const DINGUS_PRICE = 14.25;
 const WIDGET_PRICE = 9.99;
 const ZERO_FORMAT = '0.00';
-const DEBUG = true; // Where might this flag be used? (It's not mandatory)
 
 // Elements
 	let dingus = null;
@@ -14,10 +13,8 @@ const DEBUG = true; // Where might this flag be used? (It's not mandatory)
 	let total = null;
 	let submit = null;
 
-// Global store (What else would you need here?)
-let store = {
-  orderHistory: []
-};
+// Global store
+let orderHistory = [];
 
 function generateEntries() {
 	// Returns an orderHistory array
@@ -72,4 +69,57 @@ function calculate() {
 	{
 		cancel();
 	}
+}
+
+function getNextID(){
+	if(orderHistory[orderHistory.length - 1] != null){
+		return orderHistory[orderHistory.length - 1][0] + 1;
+	}
+	else{
+		return 3;
+	}
+}
+
+function getCurrentDate(){
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0');
+	var yyyy = today.getFullYear();
+
+	return (mm + '/' + dd + '/' + yyyy);
+}
+
+function submitOrder(){
+	let newOrder = [getNextID(), getCurrentDate(), dingus, widget]
+	
+	// Save it for local storage
+	orderHistory.push(newOrder);
+
+	appendData(newOrder);
+
+	resaveLocalStorage(newOrder);
+}
+
+function appendData(data){
+	let table = document.getElementById("tableBody");
+
+	let row = table.insertRow();
+	let cell1 = row.insertCell(0);
+	let cell2 = row.insertCell(1);
+	let cell3 = row.insertCell(2);
+	let cell4 = row.insertCell(3);
+	let cell5 = row.insertCell(4);
+
+	cell1.innerHTML = data[0];
+	cell2.innerHTML = data[1];
+	cell3.innerHTML = data[2];
+	cell4.innerHTML = data[3];
+	cell5.innerHTML = Number.parseFloat(data[3] * WIDGET_PRICE + data[2] * DINGUS_PRICE).toFixed(2);
+}
+
+function firstLoad(){
+	let data = generateEntries();
+	data.forEach(element => {
+		appendData(element);	
+	});
 }
