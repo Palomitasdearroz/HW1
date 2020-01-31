@@ -72,12 +72,7 @@ function calculate() {
 }
 
 function getNextID(){
-	if(orderHistory[orderHistory.length - 1] != null){
-		return orderHistory[orderHistory.length - 1][0] + 1;
-	}
-	else{
-		return 3;
-	}
+	return orderHistory.length + 3;
 }
 
 function getCurrentDate(){
@@ -93,11 +88,10 @@ function submitOrder(){
 	let newOrder = [getNextID(), getCurrentDate(), dingus, widget]
 	
 	// Save it for local storage
-	orderHistory.push(newOrder);
+		orderHistory.push(newOrder);
 
 	appendData(newOrder);
-
-	resaveLocalStorage(newOrder);
+	storeData();
 }
 
 function appendData(data){
@@ -120,6 +114,24 @@ function appendData(data){
 function firstLoad(){
 	let data = generateEntries();
 	data.forEach(element => {
-		appendData(element);	
+		appendData(element);
 	});
+
+	//retrieveData();
+
+	if(orderHistory != null){
+		orderHistory.forEach(element => {
+			appendData(element);
+		});
+	}
+}
+
+function storeData(){
+	localStorage.setItem('orderHistory', orderHistory);
+}
+
+function retrieveData(){
+	let storedData = localStorage.getItem('orderHistory');
+	if(storedData != null)
+		orderHistory = storedData;
 }
