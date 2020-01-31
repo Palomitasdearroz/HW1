@@ -4,6 +4,10 @@ const WIDGET_PRICE = 9.99;
 const ZERO_FORMAT = '0.00';
 
 // Elements
+let numberDingus = null;
+let numberWidgets = null;
+let sales = null;
+
 	let dingus = null;
 	let widget = null;
 
@@ -26,6 +30,10 @@ function generateEntries() {
 }
 
 function getElements(){
+	numberDingus = document.getElementById('numberDingus');
+	numberWidgets = document.getElementById('numberWidgets');
+	sales = document.getElementById('Sales');
+
 	dingus = Number(document.getElementById('number_dingus').value);
 	widget = Number(document.getElementById('number_widget').value);
 
@@ -45,7 +53,6 @@ function cancel(){
 
 function calculate() {
 	getElements();
-
 	if(dingus > 0 || widget > 0)
 	{
 		let x = 0;
@@ -86,9 +93,9 @@ function getCurrentDate(){
 
 function submitOrder(){
 	let newOrder = [getNextID(), getCurrentDate(), dingus, widget]
-	
+
 	// Save it for local storage
-		orderHistory.push(newOrder);
+	orderHistory.push(newOrder);
 
 	appendData(newOrder);
 	storeData();
@@ -112,6 +119,7 @@ function appendData(data){
 }
 
 function firstLoad(){
+	getElements();
 	let data = generateEntries();
 	data.forEach(element => {
 		appendData(element);
@@ -128,10 +136,27 @@ function firstLoad(){
 
 function storeData(){
 	localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+
+	updateHeaders();
+}
+
+function updateHeaders(){
+	let numDingus = 0;
+	let numWidgets = 0;
+	orderHistory.forEach(element => {
+		numDingus = numDingus + Number(element[2]);
+		numWidgets = numWidgets + Number(element[3]);
+	});
+	numDingus = numDingus + 3;
+	numWidgets = numWidgets + 3;
+	numberDingus.innerHTML = numDingus;
+	numberWidgets.innerHTML = numWidgets;
+	sales.innerHTML = Number.parseFloat(numDingus * DINGUS_PRICE + numWidgets * WIDGET_PRICE).toFixed(2);
 }
 
 function retrieveData(){
-	let storedData =JSON.parse(localStorage.getItem('orderHistory'));
+	let storedData = JSON.parse(localStorage.getItem('orderHistory'));
 	if(storedData != null)
 		orderHistory = storedData;
+	updateHeaders();
 }
