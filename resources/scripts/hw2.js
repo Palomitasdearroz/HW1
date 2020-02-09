@@ -45,6 +45,8 @@ function getElements(){
 }
 
 function cancel(){
+	document.getElementById('number_dingus').value = 0;
+	document.getElementById('number_widget').value = 0;
 	dingusT.value = ZERO_FORMAT;
 	widgetT.value = ZERO_FORMAT;
 	total.value = ZERO_FORMAT;
@@ -99,6 +101,7 @@ function submitOrder(){
 
 	appendData(newOrder);
 	storeData();
+	cancel();
 }
 
 function appendData(data){
