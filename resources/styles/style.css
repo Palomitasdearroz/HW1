@@ -10,15 +10,27 @@ img {
     width: 100%;
 }
 
-  svg {
+  #circle {
     width: 70%;
     border-radius: 50%;
     background: #3f51b5; 
     transform: rotate(-90deg);
   }
-  svg text {
+  #circle text {
     transform: rotate(90deg);
     font-size:3px;
+  }
+
+  svg > text {
+      font-size: 1px;
+  }
+
+  #rect1 {
+    fill: #3f51b5;
+  }
+
+  #rect2 {
+    fill: #00bcd4;
   }
    
   circle {
