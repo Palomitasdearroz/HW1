@@ -11,7 +11,7 @@ img {
 }
 
   svg {
-    width: 200px;
+    width: 70%;
     border-radius: 50%;
     background: #3f51b5; 
     transform: rotate(-90deg);
@@ -28,7 +28,6 @@ img {
    
   circle.first {
     stroke: #00bcd4;
-   
   }
 
 table {

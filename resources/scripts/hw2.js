@@ -180,4 +180,9 @@ function recalculate(){
 
 	let result = (graphDingus * 100 / (graphWidgets + graphDingus));
 	pie.style.strokeDasharray = result +' 100';
+
+	let pienumber1 = document.getElementById("pienumber1");
+	let pienumber2 = document.getElementById("pienumber2");
+	pienumber1.innerHTML = Math.round(result) + "%";
+	pienumber2.innerHTML = Math.round(100 - result) + "%";
 }
