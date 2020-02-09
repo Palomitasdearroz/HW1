@@ -119,6 +119,8 @@ function appendData(data){
 	cell3.innerHTML = data[2];
 	cell4.innerHTML = data[3];
 	cell5.innerHTML = Number.parseFloat(data[3] * WIDGET_PRICE + data[2] * DINGUS_PRICE).toFixed(2);
+
+	recalculate();
 }
 
 function firstLoad(){
@@ -162,4 +164,20 @@ function retrieveData(){
 	if(storedData != null)
 		orderHistory = storedData;
 	updateHeaders();
+}
+
+function recalculate(){
+	pie = document.getElementById("pie");
+
+	let graphDingus = 0;
+	let graphWidgets = 0;
+	orderHistory.forEach(element => {
+		graphDingus = graphDingus + element[2];
+		graphWidgets = graphWidgets + element[3];
+	});
+	graphWidgets = graphWidgets + 3;
+	graphDingus = graphDingus + 3;
+
+	let result = (graphDingus * 100 / (graphWidgets + graphDingus));
+	pie.style.strokeDasharray = result +' 100';
 }

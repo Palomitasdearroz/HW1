@@ -40,25 +40,28 @@
         </section>
         <hr />
         <section class="horizontal-container">
-            <section class="vertical-container
-            ">
+            <section class="vertical-container">
                 <h3>Total Sales Breakdown</h3>
                 <figure>
-                    <img src="./resources/images/pie.png" alt="Pie Chart of Sales">
+                    <!-- SVG - Stacked bar with 7 most recent purchases -->
+                    <img src="./resources/images/bar.png" alt="Sales per Day Graph">
                 </figure>
             </section>
             <section class="vertical-container">
                 <h3>Sales Per Day</h3>
                 <figure>
-                    <img src="./resources/images/bar.png" alt="Sales per Day Graph">
-                </figure>
-            </section>
-            <section class="vertical-container">
-                <figure class="embedded">
-                    <iframe class="embedded" src="https://app.zingsoft.com/demos/view/DK4RG3XN"></iframe>
+                    <!-- SVG - Pie chart with number of widgets / dinguses -->
+                    <!-- <img src="./resources/images/pie.png" alt="Pie Chart of Sales"> -->
                     <figcaption>
-                        <a href="https://app.zingsoft.com/demos/view/DK4RG3XN">Source</a>
+                        Percentage of world population by continent
                     </figcaption>
+                    
+                    <div class="buttons"></div>
+                    <svg reserveAspectRatio="xMinYMin meet" viewBox="0 0 32 32">
+                        <circle class='first' id="pie" r='16' cx='16' cy='16' stroke-dasharray="50 100"></circle>
+                        <text x="9.5" y="-28" fill="#fff">65%</text>
+                        <text x="16.5" y="-28" fill="#fff">35%</text>
+                    </svg>
                 </figure>
             </section>
         </section>
@@ -117,17 +120,5 @@
             </form>
         </details>
     </main>
-    <footer>
-        <section>
-            <p>Disclaimer: This page is provided <em>as is</em></p>
-            <p>Notes</p>
-            <ul>
-                <li>Your order will leave warehouse in 3-5 days</li>
-                <li>If you have any question please contact us at 123456789</li>
-                <li>D&W is a proud supporter of the <i>Stuart Collection</i></li>
-            </ul>
-            <address>9500 Gilman Dr, La Jolla, CA 92093</address>
-        </section>
-    </footer>
 </body>
 </html>
