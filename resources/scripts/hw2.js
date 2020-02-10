@@ -18,7 +18,10 @@ let sales = null;
 	let submit = null;
 
 // Global store
-let orderHistory = [];
+let orderHistory = [
+	[1, '01/01/2020', 1, 1], 
+	[2, '01/02/2020', 2, 2]
+  ];
 
 function generateEntries() {
 	// Returns an orderHistory array
@@ -81,7 +84,7 @@ function calculate() {
 }
 
 function getNextID(){
-	return orderHistory.length + 3;
+	return orderHistory.length + 1;
 }
 
 function getCurrentDate(){
@@ -128,7 +131,7 @@ function firstLoad(){
 	getElements();
 	let data = generateEntries();
 	data.forEach(element => {
-		appendData(element);
+		//appendData(element);
 	});
 
 	retrieveData();
@@ -193,14 +196,14 @@ function recalculate(){
 function bars(){
 	let svg = document.getElementById("bars");
 	let text = "";
-	let counter = 0;
+	let counter = 7;
 	if(orderHistory.length < 7)
 	{
 		counter = orderHistory.length;
-		console.log(counter);
+		console.log("hi!");
 	}
 	
-	for(i = 0; i < 7; i++) {
+	for(i = 0; i < counter; i++) {
 		console.log(i);
 		let percentage = Math.round(orderHistory[(orderHistory.length-1) - i][2] * 100 / (orderHistory[(orderHistory.length-1) - i][2] + orderHistory[(orderHistory.length-1) - i][3]));
 		console.log(percentage);
