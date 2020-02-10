@@ -23,15 +23,6 @@ let orderHistory = [
 	[2, '01/02/2020', 2, 2]
   ];
 
-function generateEntries() {
-	// Returns an orderHistory array
-	// [ID#, Date, Dingus quantity, Widget quantity]
-	return [
-	  [1, '01/01/2020', 1, 1], 
-	  [2, '01/02/2020', 2, 2]
-	]
-}
-
 function getElements(){
 	numberDingus = document.getElementById('numberDingus');
 	numberWidgets = document.getElementById('numberWidgets');
@@ -129,11 +120,6 @@ function appendData(data){
 
 function firstLoad(){
 	getElements();
-	let data = generateEntries();
-	data.forEach(element => {
-		//appendData(element);
-	});
-
 	retrieveData();
 
 	if(orderHistory != null){
@@ -200,17 +186,13 @@ function bars(){
 	if(orderHistory.length < 7)
 	{
 		counter = orderHistory.length;
-		console.log("hi!");
 	}
 	
 	for(i = 0; i < counter; i++) {
-		console.log(i);
 		let percentage = Math.round(orderHistory[(orderHistory.length-1) - i][2] * 100 / (orderHistory[(orderHistory.length-1) - i][2] + orderHistory[(orderHistory.length-1) - i][3]));
-		console.log(percentage);
 		
 		text = text + '<rect class="base" x="' +(91-i*15) +'" y="0" width="10" height="100"></rect>' +
 		'<rect class="top" x="' +(91-i*15) +'" y="' + percentage +'" width="10" height="100"></rect>';
-		console.log(text);
 	}
 
 	svg.innerHTML = text + '<polyline points="0,0 0,100"></polyline>'
