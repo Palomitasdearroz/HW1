@@ -25,11 +25,11 @@ img {
       font-size: 1px;
   }
 
-  #rect1 {
+  .rect1 {
     fill: #3f51b5;
   }
 
-  #rect2 {
+  .rect2 {
     fill: #00bcd4;
   }
    
