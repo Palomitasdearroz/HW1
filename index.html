@@ -41,10 +41,18 @@
         <hr />
         <section class="horizontal-container">
             <section class="vertical-container">
-                <h3>Total Sales Breakdown</h3>
                 <figure>
-                    <!-- SVG - Stacked bar with 7 most recent purchases -->
-                    <img src="./resources/images/bar.png" alt="Sales per Day Graph">
+                    <figcaption>
+                        <h3>Last 7 Purchases Breakdown</h3>
+                    </figcaption>
+                    <svg reserveAspectRatio="xMinYMin meet" viewBox="0 0 101, 100" id="bars">
+                    </svg>
+                    <svg reserveAspectRatio="xMinYMin meet" viewBox="0 0 32 2">
+                        <rect id="rect1" x="7" y="0" width="1.5" height="1.5"></rect>
+                        <rect id="rect2" x="18" y="0" width="1.5" height="1.5"></rect>
+                        <text x="9" y="1">Widget</text>
+                        <text x="20" y="1">Dingus</text>
+                    </svg>
                 </figure>
             </section>
             <section class="vertical-container">
@@ -60,8 +68,8 @@
                     <svg reserveAspectRatio="xMinYMin meet" viewBox="0 0 32 2">
                         <rect id="rect1" x="7" y="0" width="1.5" height="1.5"></rect>
                         <rect id="rect2" x="18" y="0" width="1.5" height="1.5"></rect>
-                        <text x="9" y="1" width="1.5">Widget</text>
-                        <text x="20" y="1" width="1.5">Dingus</text>
+                        <text x="9" y="1">Widget</text>
+                        <text x="20" y="1">Dingus</text>
                     </svg>
                 </figure>
             </section>

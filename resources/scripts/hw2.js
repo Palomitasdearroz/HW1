@@ -101,6 +101,7 @@ function submitOrder(){
 
 	appendData(newOrder);
 	storeData();
+	bars();
 	cancel();
 }
 
@@ -164,6 +165,8 @@ function retrieveData(){
 	if(storedData != null)
 		orderHistory = storedData;
 	updateHeaders();
+	bars();
+	recalculate();
 }
 
 function recalculate(){
@@ -185,4 +188,28 @@ function recalculate(){
 	let pienumber2 = document.getElementById("pienumber2");
 	pienumber1.innerHTML = Math.round(result) + "%";
 	pienumber2.innerHTML = Math.round(100 - result) + "%";
+}
+
+function bars(){
+	let svg = document.getElementById("bars");
+	let text = "";
+	let counter = 0;
+	if(orderHistory.length < 7)
+	{
+		counter = orderHistory.length;
+		console.log(counter);
+	}
+	
+	for(i = 0; i < 7; i++) {
+		console.log(i);
+		let percentage = Math.round(orderHistory[(orderHistory.length-1) - i][2] * 100 / (orderHistory[(orderHistory.length-1) - i][2] + orderHistory[(orderHistory.length-1) - i][3]));
+		console.log(percentage);
+		
+		text = text + '<rect class="base" x="' +(91-i*15) +'" y="0" width="10" height="100"></rect>' +
+		'<rect class="top" x="' +(91-i*15) +'" y="' + percentage +'" width="10" height="100"></rect>';
+		console.log(text);
+	}
+
+	svg.innerHTML = text + '<polyline points="0,0 0,100"></polyline>'
+	+'<polyline points="0,100 101,100"></polyline>';
 }
